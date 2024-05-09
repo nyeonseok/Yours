@@ -1,0 +1,117 @@
+#header> .inner{
+    display:flex;
+    flex-direction: column;
+    height:100px;
+    padding:10px 0 10px 0;
+}
+#top_header{
+    text-align: right;
+    font-size:13px;
+}
+.top_item{
+    color: gray;
+}
+.top_item:hover{
+    font-weight: bold;
+
+}
+
+#btm_header{
+
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#btm_header> .nav{
+    display:flex;
+    flex-direction: row;
+    padding:0;
+    margin-right:auto;
+    margin-left:100px;
+}
+
+.nav_item{
+    display:inline;
+    font:bold 20px/50px "맑은 고딕", Verdana;
+    color:black;
+    padding:0 40px 10px 40px;
+}
+
+.nav_item:hover, .nav_item:focus{
+    border-bottom:solid 2px green;
+}
+
+#header{
+    width:100%;
+    border-bottom: solid 2px #eee;
+    background-color: #fff;
+}
+
+
+
+
+
+/*검색창*/
+#homeSearch{
+    width:400px;
+    height:30px;
+}
+
+#searchBtn{
+    height:30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*프로필*/
+#profile_dropdown{
+    position: absolute;
+    padding:10px 0 10px 0;
+    width:100px;
+    height:auto;
+    border:solid 1px #c7bbbb;
+    margin:0;
+    background-color:#fff;
+    border-radius: 8px;
+    display:none;
+}
+.dropdown_item{
+    font: "맑은 고딕";
+    color:black;
+    display:block;
+    padding:4px 10px 4px 10px;
+    font-size:85%;
+
+}
+.dropdown_item:hover{
+    background-color: #f8f9fa;
+}
+#profile>li:hover>ul{
+    display: block;
+}
+
+#profile{
+    margin:0 10px 0 20px;
+}
+#profile_icon{
+    height:40px;
+    width:40px;
+    border-radius: 100%;
+}
+
+#profile:hover img {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}

@@ -1,0 +1,44 @@
+.signupItems{
+    margin:50px 0 50px 0;
+}
+
+#signupForm{
+    border:solid 1px;
+    height:500px;
+    width:500px;
+    position: relative;
+    top:50px;
+    display: flex;
+    flex-direction: column;
+}
+
+#signupBorder{
+    margin-left: 40px;
+}
+
+#contents{
+    display: flex;
+
+    justify-content: center;
+}
+
+#signupMain{
+    height:70px;
+    text-align: center;
+}
+#signupFooter{
+    height:70px;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+}
+#signupContents{
+    flex:1;
+}
+
+label{
+    float:left;
+    width:130px;
+    font-size:15px;
+}
