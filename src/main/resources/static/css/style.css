@@ -1,0 +1,24 @@
+html, body{
+    margin:0;
+    padding:0;
+}
+.inner{
+    margin : 0 auto;
+    width : 70%;
+
+}
+
+ol, ul, li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+#contents{
+    height:800px;
+    margin-bottom:20px;
+
+}

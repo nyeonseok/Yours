@@ -1,0 +1,12 @@
+#contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#loginForm{
+
+    width:400px;
+    height:300px;
+}

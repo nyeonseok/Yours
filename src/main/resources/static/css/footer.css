@@ -1,0 +1,25 @@
+#footer{
+
+    background: #F1F2F3;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:200px;
+}
+#footer_container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:20px 0 20px 0;
+}
+#nyeonseok, #tel{
+    text-align: center;
+    margin-bottom:10px;
+}
+#mainName{
+    text-align: center;
+    margin:20px 0 20px 0;
+    font-size:40px;
+    letter-spacing: 15px;
+}
+
