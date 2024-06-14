@@ -13,15 +13,15 @@
 <body>
 <header id="header"></header>
 <section id="contents">
-    <form th:method="post" th:action="|@{/login}|" th:object="${loginRequest}" id="loginForm">
+    <form th:method="post" th:action="|@{/login}|" id="loginForm">
         <div>
             <label th:for="loginId">ID : </label>
-            <input type="text" th:field="*{loginId}"/>
+            <input type="text" />
         </div>
         <br/>
         <div>
             <label th:for="password">PW : </label>
-            <input type="password" th:field="*{password}"/>
+            <input type="password" />
         </div>
         <div th:if="${#fields.hasGlobalErrors()}">
             <br/>
@@ -31,8 +31,6 @@
         <button type="submit">로그인</button>
         <!--        <button type="button" th:onclick="|location.href='@{/{loginType}/join (loginType=${loginType})}'|">회원 가입</button> <br/><br/>-->
         <button type="button" th:onclick="|location.href='@{/join}'|">회원 가입</button> <br/><br/>
-        <a href="/oauth2/authorization/google">Google로 로그인</a>
-        <a href="/oauth2/authorization/naver">Naver로 로그인</a>
 
     </form>
 </section>

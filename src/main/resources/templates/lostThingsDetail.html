@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost Thing Detail</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/contents.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/lostThingDetail.css">
+</head>
+<body>
+<header id="header"></header>
+<section id="contents">
+    <div class="inner">
+        <div id="lostThingDetail_container">
+            <h1 id="lostThingTitle"></h1>
+            <div id="lostThingDetail"></div>
+        </div>
+    </div>
+</section>
+<footer id="footer"></footer>
+<script src="/javascript/fetchMainHF.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function loadDetail() {
+        // URL에서 ID 가져오기
+        const pathArray = window.location.pathname.split('/');
+        const id = pathArray[pathArray.length - 1];
+
+        // 데이터 로드
+        $.ajax({
+            url: `/LostThings/${id}`, // 서버에서 데이터를 가져오는 엔드포인트
+            method: 'GET',
+            success: function(item) {
+                $('#lostThingTitle').text(item.itemName);
+                var detailHtml = `
+                    <p><strong>위치:</strong> ${item.itemLocation}</p>
+                    <p><strong>장소 이름:</strong> ${item.selectedPlaceName}</p>
+                    <p><strong>주소:</strong> ${item.selectedPlaceAddress}</p>
+                    <p><strong>내용:</strong> ${item.detailContents}</p>
+                    <p><strong>등록일:</strong> ${formatDate(item.createDate)}</p>
+                `;
+                $('#lostThingDetail').html(detailHtml);
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
+
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        const year = date.getFullYear();
+        const month = ('0' + (date.getMonth() + 1)).slice(-2);
+        const day = ('0' + date.getDate()).slice(-2);
+        return `${year}-${month}-${day}`;
+    }
+
+    $(document).ready(function() {
+        loadDetail();
+    });
+</script>
+</body>
+</html>

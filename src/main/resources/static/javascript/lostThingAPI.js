@@ -22,6 +22,12 @@ $(document).ready(function() {
                     // 검색 결과가 있을 경우
                     var place = result[0];
                     var latlng = new kakao.maps.LatLng(place.y, place.x);
+
+                    // 이전 마커가 있을 경우 제거
+                    if (selectedMarker) {
+                        selectedMarker.setMap(null);
+                    }
+
                     // 검색된 장소를 지도에 표시
                     var marker = new kakao.maps.Marker({
                         position: latlng
@@ -36,12 +42,35 @@ $(document).ready(function() {
                         }
                         selectedMarker = marker;
                         selectedMarker.setZIndex(1); // 선택된 마커의 Z-index를 변경
+
                         // 선택한 장소의 정보를 HTML에 표시
                         $('#selectedPlaceName').text(place.place_name);
                         $('#selectedPlaceAddress').text(place.address_name);
+
+                        // 선택한 장소의 정보를 hidden input에 설정
+                        updateHiddenInputs();
                     });
+
+                    // 바로 선택된 장소의 정보를 HTML에 표시 및 hidden input에 설정
+                    $('#selectedPlaceName').text(place.place_name);
+                    $('#selectedPlaceAddress').text(place.address_name);
+                    updateHiddenInputs();
                 }
             });
         }
     });
+
+    // 폼 제출 시 실행될 함수
+    $("#lostItemForm").submit(function(event) {
+        // 선택한 장소의 이름과 주소를 가져와서 hidden input에 설정
+        updateHiddenInputs();
+    });
+
+    // p 태그 내용을 hidden input에 설정하는 함수
+    function updateHiddenInputs() {
+        var selectedPlaceName = $("#selectedPlaceName").text();
+        var selectedPlaceAddress = $("#selectedPlaceAddress").text();
+        $("#selectedPlaceNameInput").val(selectedPlaceName);
+        $("#selectedPlaceAddressInput").val(selectedPlaceAddress);
+    }
 });
