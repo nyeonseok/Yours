@@ -1,44 +1,39 @@
-.signupItems{
-    margin:50px 0 50px 0;
+#joinHeader{
+    font-size: 27px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px;
 }
-
-#signupForm{
-    border:solid 1px;
-    height:500px;
-    width:500px;
+#joinDiv{
+    width:50%;
     position: relative;
     top:50px;
-    display: flex;
-    flex-direction: column;
+    border-radius: 40px;
+    border:1px solid;
 }
-
-#signupBorder{
-    margin-left: 40px;
-}
-
-#contents{
+.inner{
     display: flex;
-
     justify-content: center;
 }
-
-#signupMain{
-    height:70px;
+#joinForm{
+    padding:20px;
+}
+#joinBtn{
+    height: 35px;
+    background-color: black;
+    border-radius: 4px;
+    width:100px;
     text-align: center;
+    line-height: 30px;
+    border:none;
+    color:white;
 }
-#signupFooter{
-    height:70px;
-    display: flex;
-    flex-direction: row;
-
-    justify-content: center;
+#joinBtn:hover{
+    background-color: rgb(0,0,0,0.7);
+    color:white;
+    cursor:pointer;
 }
-#signupContents{
-    flex:1;
-}
-
 label{
-    float:left;
-    width:130px;
-    font-size:15px;
+    float: left;
+    width:150px;
 }

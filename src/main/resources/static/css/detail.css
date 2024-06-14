@@ -1,0 +1,36 @@
+
+#DetailDiv{
+
+    margin:50px 150px 0 150px;
+    height: 800px;
+    border-bottom: 1px solid;
+
+
+}
+#DetailHeader{
+    border-bottom: 1px solid;
+    font-size: 24px;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+label{
+    float: left;
+    width: 150px;
+    font-weight: 600;
+}
+#DetailContents{
+    display: flex;
+    flex-direction: column;
+    padding-left:150px;
+    margin-top:130px;
+
+
+}
+.itemDiv{
+    height:100px;
+    line-height: 30px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+}

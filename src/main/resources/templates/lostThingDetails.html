@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>분실물 세부사항</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/contents.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/detail.css">
+
+</head>
+<body>
+<header id="header"></header>
+
+
+<section id="contents">
+    <div class="inner">
+        <div id="DetailDiv">
+            <div id="DetailHeader">
+                분실물 세부사항
+            </div>
+            <div id="DetailContents">
+                <div id="lostThingName" class="itemDiv">
+                    <label>분실물 이름: </label>
+                    <span th:text="${lostThing.itemName}"></span>
+                </div>
+                <div id="lostThingPlace" class="itemDiv">
+                    <label>습득한 장소: </label>
+                    <span th:text="${lostThing.itemLocation}"></span>
+                </div>
+                <div id="lostThingPlace2" class="itemDiv">
+                    <label>세부 장소: </label>
+                    <span th:text="${lostThing.selectedPlaceName}" style="margin-right: 10px;"></span>
+                    <br>
+
+                    <span th:text="${lostThing.selectedPlaceAddress}"></span>
+                </div>
+                <div id="lostThingDetail" class="itemDiv">
+                    <label>상세 설명: </label>
+                    <span th:text="${lostThing.detailContents}"> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="footer"></footer>
+<script src="/javascript/fetchMainHF.js"></script>
+</body>
+</html>

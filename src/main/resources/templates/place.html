@@ -17,7 +17,7 @@
     <div class="inner">
         <div id="place_container">
             <div id="place_mainTitle">
-                장소
+                등록된 장소
             </div>
             <br>
             <div id="place_firstHeader">
@@ -25,24 +25,17 @@
                 <div class="firstHeader_name firstHeader_items name_items">장소</div>
             </div>
             <div id="place_contents">
-                <div id="place_list">
-                    <div class="place_num contents_items num_items">1</div>
-                    <div class="place_name contents_items name_items">영남대학교</div>
-                </div>
-                <div id="place_list">
-                    <div class="place_num contents_items num_items">2</div>
-                    <div class="place_name contents_items name_items">사월역</div>
-                </div>
+
             </div>
             <br>
             <div id="place_footer">
-                <div id="place_page">
-                    <span><a href="#" class="directionBtn"><<</a></span>
-                    <span><a href="#" class="directionBtn"><</a></span>
-                    <span id="number">1 2 3</span>
-                    <span><a href="#" class="directionBtn">></a></span>
-                    <span><a href="#" class="directionBtn">>></a></span>
-                </div>
+<!--                <div id="place_page">-->
+<!--                    <span><a href="#" class="directionBtn"><<</a></span>-->
+<!--                    <span><a href="#" class="directionBtn"><</a></span>-->
+<!--                    <span id="number">1 2 3</span>-->
+<!--                    <span><a href="#" class="directionBtn">></a></span>-->
+<!--                    <span><a href="#" class="directionBtn">>></a></span>-->
+<!--                </div>-->
                 <br>
                 <div id="place_Btn">
                     <div id="Btn_div">
@@ -56,5 +49,41 @@
 <footer id="footer"></footer>
 
 <script src="/javascript/fetchMainHF.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // 서버에서 데이터를 가져와서 HTML에 추가하는 함수
+    function loadData() {
+        // Ajax 요청 보내기
+        $.ajax({
+            url: '/getLostThingsData', // 서버에서 데이터를 가져오는 엔드포인트
+            method: 'GET',
+            success: function(data) {
+                // 데이터를 받아서 HTML 생성 및 추가
+                data.forEach(function(item, index) {
+                    var html = `
+                        <div class="place_list" style="display:flex;
+    flex-direction: row;
+    margin-top:15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #d8d8d8;">
+                            <div class="place_num contents_items num_items">${index + 1}</div>
+                            <div class="place_name contents_items name_items">${item.itemLocation}</div>
+                        </div>
+                    `;
+                    $('#place_contents').append(html);
+                });
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
+
+
+    // 페이지 로드 시 데이터 로드
+    $(document).ready(function() {
+        loadData();
+    });
+</script>
 </body>
 </html>

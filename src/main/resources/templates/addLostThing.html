@@ -8,34 +8,42 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/contents.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/addLostThings.css">
+</head>
 </head>
 <body>
 <header id="header"></header>
 <section id="contents">
     <div class="inner">
-        <h2>분실물 등록</h2>
-        <form id="lostItemForm" action="/addLostThing" method="post">
-            <label for="itemName">분실물 이름:</label>
-            <input type="text" id="itemName" name="itemName" required><br><br>
-            <label for="itemImage">분실물 사진:</label>
-            <input type="file" id="itemImage" name="itemImage" accept="image/*" required><br><br>
-            <label for="itemLocation">습득한 장소:</label>
-            <input type="text" id="itemLocation" name="itemLocation" required>
-            <div id="selectedPlace">
-                <h3>선택한 장소</h3>
-                <p id="selectedPlaceName"></p>
-                <p id="selectedPlaceAddress"></p>
+        <div id="addDiv">
+            <div id="addHeader">
+                분실물 등록
             </div>
+            <form id="lostItemForm" action="/addLostThing" method="post">
+                <div id="lostTingName" class="lostItems">
+                    <label for="itemName">분실물 이름:</label>
+                    <input type="text" id="itemName" name="itemName" required><br><br>
+                </div>
+                <div id="lostThingPlace" class="lostItems">
+                    <label for="itemLocation">습득한 장소:</label>
+                    <input type="text" id="itemLocation" name="itemLocation" required>
+                </div>
+                <div id="selectedPlace" class="lostItems">
+                    <h3>선택한 장소</h3>
+                    <p id="selectedPlaceName"></p>
+                    <p id="selectedPlaceAddress"></p>
+                </div>
 
-            <input type="hidden" id="selectedPlaceNameInput" name="selectedPlaceName" required>
-            <input type="hidden" id="selectedPlaceAddressInput" name="selectedPlaceAddress" required>
-            <div id="map" style="width: 100%; height:300px;"></div><br>
-            <div>
-                <label for="detailContents">내용</label>
-                <input id="detailContents" name="detailContents" style="width:600px; height:300px;">
-            </div>
-            <input type="submit" value="등록">
-        </form>
+                <input type="hidden" id="selectedPlaceNameInput" name="selectedPlaceName" required>
+                <input type="hidden" id="selectedPlaceAddressInput" name="selectedPlaceAddress" required>
+                <div id="map" style="width: 100%; height:300px;"></div><br>
+                <div class="lostItems">
+                    <label for="detailContents">내용:</label>
+                    <input id="detailContents" name="detailContents" style="width:600px; height:300px;">
+                </div>
+                <span id="submitDiv"><input type="submit" value="등록" id="submitBtn"></span>
+            </form>
+        </div>
     </div>
 </section>
 <footer id="footer"></footer>

@@ -1,16 +1,14 @@
 package nyeonseok.Yours.Entity;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.antlr.v4.runtime.misc.NotNull;
+import lombok.*;
+
 
 @Entity
 @Getter
-@Table
+@Builder
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
+@AllArgsConstructor
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,5 +28,7 @@ public class Member {
     @Setter
     @Column(nullable = false,length = 10)
     private String password;
+
+    private MemberRole role;
 
 }

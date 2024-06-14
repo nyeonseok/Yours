@@ -19,14 +19,11 @@ public class LostThingsService {
         return lostThingsRepository.findAll();
     }
 
-    public Optional<LostThings> getLostThingById(int id) {
-        return lostThingsRepository.findById(String.valueOf(id));
-    }
-
     public void saveLostThings(LostThings lostThings){lostThingsRepository.save(lostThings);}
 
-    public Optional<LostThings> findByitemName(String itemName){
-        return lostThingsRepository.findByitemName(itemName);
+    public LostThings findById(Long id) {
+        Optional<LostThings> optionalLostThing = lostThingsRepository.findById(id);
+        return optionalLostThing.orElseThrow(() -> new RuntimeException("분실물을 찾을 수 없습니다."));
     }
 
 }

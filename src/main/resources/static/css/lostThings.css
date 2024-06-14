@@ -55,30 +55,28 @@
     float:right;
 }
 
-.directionBtn{
-    border:solid 1px;
-    margin:0 3px 0 3px;
-    border-radius: 4px;
 
-    color:black;
-    border:none;
-    height:15px;
-}
-.directionBtn:hover{
-    background-color:rgb(0,0,0,0.7) ;
-    color:white;
-}
 #number{
     margin:0 8px 0 8px;
 }
 #upload_lostThings{
     color:white;
-    background-color: black;
-    font-weight: 1;
-    border-radius: 4px;
-    font-size:17px;
+
+
+
+    font-size:14px;
+
 }
-#upload_lostThings:hover{
+#Btn_div{
+    height: 35px;
+    background-color: black;
+    border-radius: 4px;
+    width:100px;
+    text-align: center;
+    line-height: 30px;
+
+}
+#Btn_div:hover{
     background-color: rgb(0,0,0,0.7);
     color:white;
 }

@@ -3,33 +3,11 @@
 }
 
 #contents_container{
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,320px);
-    grid-row-gap: 60px;
-    grid-column-gap: 30px;
-    grid-template-areas:
-    "added added"
-    "test1 test2";
+    text-align: center;
     position:relative;
-    top:50px;
-
+    top:70px;
 }
 
-.added_lost_things{
-    grid-area: added;
-    border-radius: 10px;
-    box-shadow: 0rem 1.1rem 3.5rem 0.2rem rgba(0, 0, 0, 0.14);
-}
-
-.test1{
-    grid-area: test1;
-    border-radius: 10px;
-    box-shadow: 0rem 1.1rem 3.5rem 0.2rem rgba(0, 0, 0, 0.14);
-}
-
-.test2{
-    grid-area: test2;
-    border-radius: 10px;
-    box-shadow: 0rem 1.1rem 3.5rem 0.2rem rgba(0, 0, 0, 0.14);
+#Yours{
+    font-size: 20px;
 }
